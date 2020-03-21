@@ -91,8 +91,34 @@ int main(int argc, string argv[])
 
     }
 
+    //print preferences[i][j] array
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
+            printf("pref...[%i][%i]: %i  ", i, j, preferences[i][j]);
+        }
+        printf("\n");
+    }
+
     add_pairs();
+
+    //print pairs array & pair count BEFORE sort_pairs()
+    for (int i = 0; i < pair_count; i++)
+    {
+        printf("Pair %i - Winner: %i, Loser: %i\n", i + 1, pairs[i].winner, pairs[i].loser);
+    }
+    printf("pair_count:%i\n\n", pair_count);
+
     sort_pairs();
+
+    //print pairs array & pair count AFTER sort_pairs()
+    for (int i = 0; i < pair_count; i++)
+    {
+        printf("Pair %i - Winner: %i, Loser: %i\n", i + 1, pairs[i].winner, pairs[i].loser);
+    }
+    printf("pair_count:%i\n", pair_count);
+
     lock_pairs();
     print_winner();
     return 0;
