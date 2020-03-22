@@ -7,7 +7,7 @@ bool isCyclicUtil(int v, bool visited[], bool recStack)
         recStack[v] = true; 
   
         // Recur for all the vertices adjacent to this vertex 
-        for(i = pairs[v].winner; i != pairs[v].loser; ++i) 
+        for(i = pairs[v].winner; i != pairs[v].loser; i++) 
         { 
             if ( !visited[i] && isCyclicUtil(i, visited, recStack) ) 
                 return true; 
